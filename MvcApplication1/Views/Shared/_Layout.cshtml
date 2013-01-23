@@ -1,0 +1,54 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title - My ASP.NET MVC Application</title>
+    <link href="~/favicon.ico" rel="shortcut icon" type="image/x-icon" />
+    <meta name="viewport" content="width=device-width" />
+    @Scripts.Render("~/bundles/modernizr")
+    @Styles.Render("~/Content/bootstrap")
+    <!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
+    <!--[if lt IE 9]>
+      <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+</head>
+<body class="container">
+    <div class="navbar">
+        <div class="navbar-inner">
+            <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse"><span
+                class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span>
+            </a><a class="brand" href="/Home">Learning Bootstrap and Membership</a>
+            <ul class="nav">
+                <li class="active">@Html.ActionLink("Home", "Index", "Home")</li>
+                <li>@Html.ActionLink("About", "About", "Home")</li>
+                <li>@Html.ActionLink("Contact", "Contact", "Home")</li>
+                <li class="divider-vertical"></li>
+            </ul>
+            <section class="pull-right">
+                 @Html.Partial("_LoginPartial")
+            </section>
+        </div>
+        <div class="conainer-fluid">
+            <div class="row-fluid">
+            </div>
+            <div class="span2">
+            </div>
+            <div class="span8">
+                @RenderSection("featured", required: false)
+                @RenderBody()
+            </div>
+        </div>
+        <div class="row-fluid">
+        </div>
+        <div class="span10">
+            <p>
+                &copy; @DateTime.Now.Year - My ASP.NET MVC Application</p>
+        </div>
+    </div>
+    </div>
+</body>
+@Scripts.Render("~/bundles/jquery")
+@Scripts.Render("~/bundles/bootstrap")
+@RenderSection("scripts", required: false)
+</html>
